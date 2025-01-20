@@ -1,0 +1,1854 @@
+[
+    {
+        "image_path": "generated_images2/image_1.png",
+        "prompt": "A cat sitting on a red couch with a colorful pillow next to it.",
+        "questions": [
+            [
+                "Is there a cat?",
+                "Is there a couch?",
+                "Is there a pillow?",
+                "Is the couch red?",
+                "Is the cat sitting?",
+                "Is the pillow colorful?",
+                "Is the cat on the couch?",
+                "Is the pillow on the couch?",
+                "Is the pillow next to the cat?"
+            ],
+            [
+                "Is there a cat?",
+                "Is there a couch?",
+                "Is there a pillow?",
+                "Is the couch red?",
+                "Is the cat sitting?",
+                "Is the pillow colorful?",
+                "Is the cat on the couch?",
+                "Is the pillow on the couch?",
+                "Is the pillow next to the cat?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "No",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "No",
+                "No"
+            ],
+            [
+                "Yes",
+                "No",
+                "No",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "No",
+                "No"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0
+            ],
+            [
+                1,
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0
+            ]
+        ],
+        "reward_score": 0.3888888888888889
+    },
+    {
+        "image_path": "generated_images2/image_1.png",
+        "prompt": "A chicken pecking at seeds scattered on the ground of a rustic farmyard.",
+        "questions": [
+            [
+                "Is there a chicken?",
+                "Are there seeds?",
+                "Is there ground?",
+                "Is there a farmyard?",
+                "Is the farmyard rustic?",
+                "Is the chicken pecking at the seeds?",
+                "Are the seeds on the ground?",
+                "Is the chicken on the ground?",
+                "Is the ground in the farmyard?"
+            ],
+            [
+                "Is there a chicken?",
+                "Are there seeds?",
+                "Is there ground?",
+                "Is there a farmyard?",
+                "Is the farmyard rustic?",
+                "Is the chicken pecking at the seeds?",
+                "Are the seeds on the ground?",
+                "Is the chicken on the ground?",
+                "Is the ground in the farmyard?"
+            ]
+        ],
+        "answers": [
+            [
+                "No",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "No",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "No"
+            ]
+        ],
+        "qa_results": [
+            [
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0
+            ]
+        ],
+        "reward_score": 0.7777777777777778
+    },
+    {
+        "image_path": "generated_images2/image_1.png",
+        "prompt": "A chicken pecking at seeds scattered on the ground of a rustic farmyard.",
+        "questions": [
+            [
+                "Is there a chicken?",
+                "Are there seeds?",
+                "Is there ground?",
+                "Is there a farmyard?",
+                "Is the farmyard rustic?",
+                "Is the chicken pecking at the seeds?",
+                "Are the seeds on the ground?",
+                "Is the chicken on the ground?",
+                "Is the ground in the farmyard?"
+            ],
+            [
+                "Is there a chicken?",
+                "Are there seeds?",
+                "Is there ground?",
+                "Is there a farmyard?",
+                "Is the farmyard rustic?",
+                "Is the chicken pecking at the seeds?",
+                "Are the seeds on the ground?",
+                "Is the chicken on the ground?",
+                "Is the ground in the farmyard?"
+            ]
+        ],
+        "answers": [
+            [
+                "No",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "No",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "No"
+            ]
+        ],
+        "qa_results": [
+            [
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0
+            ]
+        ],
+        "reward_score": 0.7777777777777778
+    },
+    {
+        "image_path": "generated_images2/image_2.png",
+        "prompt": "A hedgehog curled up on a bed of autumn leaves near a fallen log.",
+        "questions": [
+            [
+                "Is there a hedgehog?",
+                "Is there a bed of leaves?",
+                "Is there a log?",
+                "Is the hedgehog curled up?",
+                "Are the leaves indicated of autumn?",
+                "Is the log fallen?",
+                "Is the hedgehog on a bed of leaves?",
+                "Is the hedgehog near the log?",
+                "Is the bed of leaves near the log?"
+            ],
+            [
+                "Is there a hedgehog?",
+                "Is there a bed of leaves?",
+                "Is there a log?",
+                "Is the hedgehog curled up?",
+                "Are the leaves indicated of autumn?",
+                "Is the log fallen?",
+                "Is the hedgehog on a bed of leaves?",
+                "Is the hedgehog near the log?",
+                "Is the bed of leaves near the log?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "No",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "No",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "No",
+                "Yes",
+                "Yes",
+                "No",
+                "Yes",
+                "No",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1
+            ],
+            [
+                1,
+                1,
+                0,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1
+            ]
+        ],
+        "reward_score": 0.5555555555555556
+    },
+    {
+        "image_path": "generated_images2/image_3.png",
+        "prompt": "A cat sitting on a red couch with a colorful pillow next to it.",
+        "questions": [
+            [
+                "Is there a cat?",
+                "Is there a couch?",
+                "Is there a pillow?",
+                "Is the couch red?",
+                "Is the cat sitting?",
+                "Is the pillow colorful?",
+                "Is the cat on the couch?",
+                "Is the pillow on the couch?",
+                "Is the pillow next to the cat?"
+            ],
+            [
+                "Is there a cat?",
+                "Is there a couch?",
+                "Is there a pillow?",
+                "Is the couch red?",
+                "Is the cat sitting?",
+                "Is the pillow colorful?",
+                "Is the cat on the couch?",
+                "Is the pillow on the couch?",
+                "Is the pillow next to the cat?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "No",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "No",
+                "No"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "No",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "No",
+                "No"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0
+            ],
+            [
+                1,
+                1,
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0
+            ]
+        ],
+        "reward_score": 0.5555555555555556
+    },
+    {
+        "image_path": "generated_images2/image_4.png",
+        "prompt": "A monkey climbing a tree with ripe bananas hanging from its branches.",
+        "questions": [
+            [
+                "Is there a monkey?",
+                "Is there a tree?",
+                "Are there bananas?",
+                "Are the bananas ripe?",
+                "Is the monkey climbing the tree?",
+                "Are the ripe bananas hanging from the tree branches?"
+            ],
+            [
+                "Is there a monkey?",
+                "Is there a tree?",
+                "Are there bananas?",
+                "Are the bananas ripe?",
+                "Is the monkey climbing the tree?",
+                "Are the ripe bananas hanging from the tree branches?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "reward_score": 1.0
+    },
+    {
+        "image_path": "generated_images2/image_5.png",
+        "prompt": "A monkey climbing a tree with ripe bananas hanging from its branches.",
+        "questions": [
+            [
+                "Is there a monkey?",
+                "Is there a tree?",
+                "Are there bananas?",
+                "Are the bananas ripe?",
+                "Is the monkey climbing the tree?",
+                "Are the ripe bananas hanging from the tree branches?"
+            ],
+            [
+                "Is there a monkey?",
+                "Is there a tree?",
+                "Are there bananas?",
+                "Are the bananas ripe?",
+                "Is the monkey climbing the tree?",
+                "Are the ripe bananas hanging from the tree branches?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "No",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "No",
+                "No",
+                "Yes",
+                "No"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                0,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                0,
+                0,
+                1,
+                0
+            ]
+        ],
+        "reward_score": 0.5
+    },
+    {
+        "image_path": "generated_images2/image_6.png",
+        "prompt": "A sheep grazing in a hilly pasture with a small barn in the background.",
+        "questions": [
+            [
+                "Is there a sheep?",
+                "Is there a pasture?",
+                "Is there a barn?",
+                "Is the barn small?",
+                "Is the sheep grazing?",
+                "Is the sheep in the pasture?",
+                "Is the barn in the pasture?",
+                "Is the sheep in front of the barn?",
+                "Is the barn in the background?"
+            ],
+            [
+                "Is there a sheep?",
+                "Is there a pasture?",
+                "Is there a barn?",
+                "Is the barn small?",
+                "Is the sheep grazing?",
+                "Is the sheep in the pasture?",
+                "Is the barn in the pasture?",
+                "Is the sheep in front of the barn?",
+                "Is the barn in the background?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "No",
+                "No",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1
+            ]
+        ],
+        "reward_score": 0.8888888888888888
+    },
+    {
+        "image_path": "generated_images2/image_7.png",
+        "prompt": "A cow lying on a grassy hill near a crystal-clear stream.",
+        "questions": [
+            [
+                "Is there a cow?",
+                "Is there a hill?",
+                "Is there a stream?",
+                "Is the hill grassy?",
+                "Is the stream crystal-clear?",
+                "Is the cow lying down?",
+                "Is the cow on a hill?",
+                "Is the cow near the stream?"
+            ],
+            [
+                "Is there a cow?",
+                "Is there a hill?",
+                "Is there a stream?",
+                "Is the hill grassy?",
+                "Is the stream crystal-clear?",
+                "Is the cow lying down?",
+                "Is the cow on a hill?",
+                "Is the cow near the stream?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "No",
+                "Yes",
+                "Yes",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                1
+            ]
+        ],
+        "reward_score": 0.9375
+    },
+    {
+        "image_path": "generated_images2/image_8.png",
+        "prompt": "A gorilla sitting on a large rock surrounded by lush green vegetation.",
+        "questions": [
+            [
+                "Is there a gorilla?",
+                "Is there a rock?",
+                "Is there vegetation?",
+                "Is the gorilla sitting?",
+                "Is the rock large?",
+                "Is the vegetation lush and green?",
+                "Is the gorilla on the rock?",
+                "Is the rock in the vegetation?",
+                "Is the gorilla surrounded by the vegetation?"
+            ],
+            [
+                "Is there a gorilla?",
+                "Is there a rock?",
+                "Is there vegetation?",
+                "Is the gorilla sitting?",
+                "Is the rock large?",
+                "Is the vegetation lush and green?",
+                "Is the gorilla on the rock?",
+                "Is the rock in the vegetation?",
+                "Is the gorilla surrounded by the vegetation?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "reward_score": 1.0
+    },
+    {
+        "image_path": "generated_images2/image_9.png",
+        "prompt": "A camel walking across a sandy desert with dunes in the background.",
+        "questions": [
+            [
+                "Is there a camel?",
+                "Is there a desert?",
+                "Are there dunes?",
+                "Is the desert sandy?",
+                "Is the camel walking across?",
+                "Is the camel in the desert?",
+                "Are the dunes in the background?"
+            ],
+            [
+                "Is there a camel?",
+                "Is there a desert?",
+                "Are there dunes?",
+                "Is the desert sandy?",
+                "Is the camel walking across?",
+                "Is the camel in the desert?",
+                "Are the dunes in the background?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "reward_score": 1.0
+    },
+    {
+        "image_path": "generated_images2/image_10.png",
+        "prompt": "A zebra drinking water from a small lake surrounded by trees.",
+        "questions": [
+            [
+                "Is there a zebra?",
+                "Is there a lake?",
+                "Are there trees?",
+                "Is the lake small?",
+                "Is the zebra drinking water?",
+                "Is the zebra at the lake?",
+                "Is the lake surrounded by trees?"
+            ],
+            [
+                "Is there a zebra?",
+                "Is there a lake?",
+                "Are there trees?",
+                "Is the lake small?",
+                "Is the zebra drinking water?",
+                "Is the zebra at the lake?",
+                "Is the lake surrounded by trees?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "No",
+                "Yes",
+                "No",
+                "Yes",
+                "Yes",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+            ]
+        ],
+        "reward_score": 0.6428571428571429
+    },
+    {
+        "image_path": "generated_images2/image_11.png",
+        "prompt": "A bird flying over a vibrant garden full of blooming flowers.",
+        "questions": [
+            [
+                "Is there a bird?",
+                "Is there a garden?",
+                "Are there flowers?",
+                "Is the garden vibrant?",
+                "Are the flowers blooming?",
+                "Is the bird flying over?",
+                "Is the bird over the garden?",
+                "Are the flowers in the garden?"
+            ],
+            [
+                "Is there a bird?",
+                "Is there a garden?",
+                "Are there flowers?",
+                "Is the garden vibrant?",
+                "Are the flowers blooming?",
+                "Is the bird flying over?",
+                "Is the bird over the garden?",
+                "Are the flowers in the garden?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "reward_score": 1.0
+    },
+    {
+        "image_path": "generated_images2/image_12.png",
+        "prompt": "A chicken pecking at seeds scattered on the ground of a rustic farmyard.",
+        "questions": [
+            [
+                "Is there a chicken?",
+                "Are there seeds?",
+                "Is there ground?",
+                "Is there a farmyard?",
+                "Is the farmyard rustic?",
+                "Is the chicken pecking at the seeds?",
+                "Are the seeds on the ground?",
+                "Is the chicken on the ground?",
+                "Is the ground in the farmyard?"
+            ],
+            [
+                "Is there a chicken?",
+                "Are there seeds?",
+                "Is there ground?",
+                "Is there a farmyard?",
+                "Is the farmyard rustic?",
+                "Is the chicken pecking at the seeds?",
+                "Are the seeds on the ground?",
+                "Is the chicken on the ground?",
+                "Is the ground in the farmyard?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "reward_score": 1.0
+    },
+    {
+        "image_path": "generated_images2/image_13.png",
+        "prompt": "A dog running in a green field under a bright blue sky.",
+        "questions": [
+            [
+                "Is there a dog?",
+                "Is there a field?",
+                "Is there a sky?",
+                "Is the field green?",
+                "Is the sky bright blue?",
+                "Is the dog running?",
+                "Is the dog in the field?",
+                "Is the field under the sky?"
+            ],
+            [
+                "Is there a dog?",
+                "Is there a field?",
+                "Is there a sky?",
+                "Is the field green?",
+                "Is the sky bright blue?",
+                "Is the dog running?",
+                "Is the dog in the field?",
+                "Is the field under the sky?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "reward_score": 1.0
+    },
+    {
+        "image_path": "generated_images2/image_14.png",
+        "prompt": "A bird flying over a vibrant garden full of blooming flowers.",
+        "questions": [
+            [
+                "Is there a bird?",
+                "Is there a garden?",
+                "Are there flowers?",
+                "Is the garden vibrant?",
+                "Are the flowers blooming?",
+                "Is the bird flying over?",
+                "Is the bird over the garden?",
+                "Are the flowers in the garden?"
+            ],
+            [
+                "Is there a bird?",
+                "Is there a garden?",
+                "Are there flowers?",
+                "Is the garden vibrant?",
+                "Are the flowers blooming?",
+                "Is the bird flying over?",
+                "Is the bird over the garden?",
+                "Are the flowers in the garden?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "reward_score": 1.0
+    },
+    {
+        "image_path": "generated_images2/image_15.png",
+        "prompt": "A sheep grazing in a hilly pasture with a small barn in the background.",
+        "questions": [
+            [
+                "Is there a sheep?",
+                "Is there a pasture?",
+                "Is there a barn?",
+                "Is the barn small?",
+                "Is the sheep grazing?",
+                "Is the sheep in the pasture?",
+                "Is the barn in the pasture?",
+                "Is the sheep in front of the barn?",
+                "Is the barn in the background?"
+            ],
+            [
+                "Is there a sheep?",
+                "Is there a pasture?",
+                "Is there a barn?",
+                "Is the barn small?",
+                "Is the sheep grazing?",
+                "Is the sheep in the pasture?",
+                "Is the barn in the pasture?",
+                "Is the sheep in front of the barn?",
+                "Is the barn in the background?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "No",
+                "No",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1
+            ]
+        ],
+        "reward_score": 0.8888888888888888
+    },
+    {
+        "image_path": "generated_images2/image_16.png",
+        "prompt": "A bee hovering near a sunflower in a bright summer field.",
+        "questions": [
+            [
+                "Is there a bee?",
+                "Is there a sunflower?",
+                "Is there a field?",
+                "Is it a bright summer day?",
+                "Is the bee hovering?",
+                "Is the bee near the sunflower?",
+                "Is the sunflower in the field?",
+                "Is the bee in the field?"
+            ],
+            [
+                "Is there a bee?",
+                "Is there a sunflower?",
+                "Is there a field?",
+                "Is it a bright summer day?",
+                "Is the bee hovering?",
+                "Is the bee near the sunflower?",
+                "Is the sunflower in the field?",
+                "Is the bee in the field?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "reward_score": 1.0
+    },
+    {
+        "image_path": "generated_images2/image_17.png",
+        "prompt": "A llama standing on a mountain trail with a panoramic view of the valley below.",
+        "questions": [
+            [
+                "Is there a llama?",
+                "Is there a mountain trail?",
+                "Is there a valley?",
+                "is the llama standing?",
+                "Is the view of the valley panoramic?",
+                "Is the llama standing on the mountain trail?",
+                "Is the mountain trail above the valley?"
+            ],
+            [
+                "Is there a llama?",
+                "Is there a mountain trail?",
+                "Is there a valley?",
+                "is the llama standing?",
+                "Is the view of the valley panoramic?",
+                "Is the llama standing on the mountain trail?",
+                "Is the mountain trail above the valley?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "reward_score": 1.0
+    },
+    {
+        "image_path": "generated_images2/image_18.png",
+        "prompt": "A spider weaving an intricate web between two tall bushes.",
+        "questions": [
+            [
+                "Is there a spider?",
+                "Is there a web?",
+                "Are there bushes?",
+                "Are there two bushes?",
+                "Is the spider weaving a web?",
+                "Is the web intricate?",
+                "Are the bushes tall?",
+                "Is the web woven between the bushes?"
+            ],
+            [
+                "Is there a spider?",
+                "Is there a web?",
+                "Are there bushes?",
+                "Are there two bushes?",
+                "Is the spider weaving a web?",
+                "Is the web intricate?",
+                "Are the bushes tall?",
+                "Is the web woven between the bushes?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "No",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "reward_score": 0.9375
+    },
+    {
+        "image_path": "generated_images2/image_19.png",
+        "prompt": "A duck swimming gracefully in a calm lake during sunset.",
+        "questions": [
+            [
+                "Is there a duck?",
+                "Is there a lake?",
+                "Is the duck swimming?",
+                "Is the duck graceful?",
+                "Is the lake calm?",
+                "Is it sunset at the lake?",
+                "Is the duck in the lake?"
+            ],
+            [
+                "Is there a duck?",
+                "Is there a lake?",
+                "Is the duck swimming?",
+                "Is the duck graceful?",
+                "Is the lake calm?",
+                "Is it sunset at the lake?",
+                "Is the duck in the lake?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "No",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1
+            ]
+        ],
+        "reward_score": 0.9285714285714286
+    },
+    {
+        "image_path": "generated_images2/image_20.png",
+        "prompt": "A deer standing in a misty forest with sunlight filtering through the trees.",
+        "questions": [
+            [
+                "Is there a deer?",
+                "Is there a forest?",
+                "Is the forest misty?",
+                "Is the deer standing?",
+                "Is there sunlight?",
+                "Is the deer in the forest?",
+                "Is the sunlight filtering through the trees?"
+            ],
+            [
+                "Is there a deer?",
+                "Is there a forest?",
+                "Is the forest misty?",
+                "Is the deer standing?",
+                "Is there sunlight?",
+                "Is the deer in the forest?",
+                "Is the sunlight filtering through the trees?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "reward_score": 1.0
+    },
+    {
+        "image_path": "generated_images2/image_21.png",
+        "prompt": "A cow lying on a grassy hill near a crystal-clear stream.",
+        "questions": [
+            [
+                "Is there a cow?",
+                "Is there a hill?",
+                "Is there a stream?",
+                "Is the hill grassy?",
+                "Is the stream crystal-clear?",
+                "Is the cow lying down?",
+                "Is the cow on a hill?",
+                "Is the cow near the stream?"
+            ],
+            [
+                "Is there a cow?",
+                "Is there a hill?",
+                "Is there a stream?",
+                "Is the hill grassy?",
+                "Is the stream crystal-clear?",
+                "Is the cow lying down?",
+                "Is the cow on a hill?",
+                "Is the cow near the stream?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "No",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "No",
+                "Yes",
+                "Yes",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                1
+            ]
+        ],
+        "reward_score": 0.875
+    },
+    {
+        "image_path": "generated_images2/image_22.png",
+        "prompt": "A gorilla sitting on a large rock surrounded by lush green vegetation.",
+        "questions": [
+            [
+                "Is there a gorilla?",
+                "Is there a rock?",
+                "Is there vegetation?",
+                "Is the gorilla sitting?",
+                "Is the rock large?",
+                "Is the vegetation lush and green?",
+                "Is the gorilla on the rock?",
+                "Is the rock in the vegetation?",
+                "Is the gorilla surrounded by the vegetation?"
+            ],
+            [
+                "Is there a gorilla?",
+                "Is there a rock?",
+                "Is there vegetation?",
+                "Is the gorilla sitting?",
+                "Is the rock large?",
+                "Is the vegetation lush and green?",
+                "Is the gorilla on the rock?",
+                "Is the rock in the vegetation?",
+                "Is the gorilla surrounded by the vegetation?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "No",
+                "No",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "reward_score": 0.8888888888888888
+    },
+    {
+        "image_path": "generated_images2/image_23.png",
+        "prompt": "A kangaroo hopping across a rocky terrain under a warm orange sky.",
+        "questions": [
+            [
+                "Is there a kangaroo?",
+                "Is there a terrain?",
+                "Is the terrain rocky?",
+                "Is there a sky?",
+                "Is the sky warm orange?",
+                "Is the kangaroo hopping across the terrain?",
+                "Is the kangaroo under the sky?"
+            ],
+            [
+                "Is there a kangaroo?",
+                "Is there a terrain?",
+                "Is the terrain rocky?",
+                "Is there a sky?",
+                "Is the sky warm orange?",
+                "Is the kangaroo hopping across the terrain?",
+                "Is the kangaroo under the sky?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "Yes",
+                "Yes",
+                "No",
+                "Yes",
+                "Yes",
+                "No"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                0
+            ]
+        ],
+        "reward_score": 0.7857142857142857
+    },
+    {
+        "image_path": "generated_images2/image_24.png",
+        "prompt": "A gorilla sitting on a large rock surrounded by lush green vegetation.",
+        "questions": [
+            [
+                "Is there a gorilla?",
+                "Is there a rock?",
+                "Is there vegetation?",
+                "Is the gorilla sitting?",
+                "Is the rock large?",
+                "Is the vegetation lush and green?",
+                "Is the gorilla on the rock?",
+                "Is the rock in the vegetation?",
+                "Is the gorilla surrounded by the vegetation?"
+            ],
+            [
+                "Is there a gorilla?",
+                "Is there a rock?",
+                "Is there vegetation?",
+                "Is the gorilla sitting?",
+                "Is the rock large?",
+                "Is the vegetation lush and green?",
+                "Is the gorilla on the rock?",
+                "Is the rock in the vegetation?",
+                "Is the gorilla surrounded by the vegetation?"
+            ]
+        ],
+        "answers": [
+            [
+                "Yes",
+                "No",
+                "Yes",
+                "Yes",
+                "No",
+                "Yes",
+                "No",
+                "No",
+                "Yes"
+            ],
+            [
+                "Yes",
+                "No",
+                "Yes",
+                "Yes",
+                "No",
+                "Yes",
+                "No",
+                "No",
+                "Yes"
+            ]
+        ],
+        "qa_results": [
+            [
+                1,
+                0,
+                1,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1
+            ],
+            [
+                1,
+                0,
+                1,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1
+            ]
+        ],
+        "reward_score": 0.5555555555555556
+    }
+]
