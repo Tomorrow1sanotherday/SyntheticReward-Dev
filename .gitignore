@@ -164,8 +164,9 @@ cython_debug/
 test.ipynb
 
 data/
-generated_images/
-generated_images_base/
+save_sd1.5_a/
+save_sd1.5_a_fail/
+train_generated_images/
 generated_images2/
 save_ddpo/
 save_ddpo_2/

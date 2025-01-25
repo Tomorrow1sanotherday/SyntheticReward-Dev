@@ -63,7 +63,7 @@ def prompt_fn():
     return prompt, {}
 
 
-def vqa_scorer(vqa_pipeline, local_file_path="rewards.json"):
+def vqa_scorer(vqa_pipeline, local_file_path="rewards_sd1.5_vqa.json"):
     """
     Use vqa_pipeline to score images based on prompts and log rewards.
     Rewards are saved both to WandB and a local JSON file.
@@ -164,7 +164,7 @@ if __name__ == "__main__":
     vqa_ensembler = VQAEnsembler([vqa_model_1, vqa_model_2])
     weak_supervisor = WeakSupervisor(strategy_name="MajorityVoting")
     # Initialize Logger
-    logger = Logger(log_file="training_log.json", image_dir="generated_images")
+    logger = Logger(log_file="training_log_vqa.json", image_dir="train_generated_images/sd1.5_vqa")
     vqa_pipeline = Pipeline(vqa_ensembler, weak_supervisor, logger)
 
     parser = HfArgumentParser((ScriptArguments, DDPOConfig))
@@ -173,14 +173,14 @@ if __name__ == "__main__":
         "logging_dir": "./logs",
         "automatic_checkpoint_naming": True,
         "total_limit": 5,
-        "project_dir": "./save_ddpo_2",
+        "project_dir": "./save_sd1.5_vqa",
     }
 
     # 如果使用 wandb 进行日志记录，确保它已启用
     training_args.log_with = "wandb"
 
     # Initialize WandB
-    wandb.init(project="sd1.5_two_models_training_2", config=script_args)
+    wandb.init(project="sd1.5_vqa", config=script_args)
 
     pipeline = DefaultDDPOStableDiffusionPipeline(
         script_args.pretrained_model,
@@ -190,14 +190,14 @@ if __name__ == "__main__":
 
     trainer = DDPOTrainer(
         training_args,
-        vqa_scorer(vqa_pipeline, local_file_path="rewards.json"),  # Pass local JSON file path
+        vqa_scorer(vqa_pipeline, local_file_path="rewards_sd1.5_vqa.json"),  # Pass local JSON file path
         prompt_fn,
         pipeline,
         image_samples_hook=image_outputs_logger,
     )
 
     # Use fixed checkpoint directory and file name, so it will overwrite the latest checkpoint
-    checkpoint_dir = './save_ddpo_2/checkpoints/'
+    checkpoint_dir = './save_sd1.5_vqa/checkpoints/'
     checkpoint_file_name = get_checkpoint_file_name(checkpoint_dir)
 
     # Train the model

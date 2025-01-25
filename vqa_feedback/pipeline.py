@@ -121,12 +121,18 @@ class Pipeline:
     def process(self, image, prompt):
         # Generate the hard score matrix
         result = self.vqa_ensembler.generate_vqa_score_matrix(image, prompt)
+
         
         # Calculate soft score using the weak supervisor
         soft_score = self.weak_supervisor.compute_soft_score(result['score_matrix'])
         
         # The final score is the soft score at index 1
-        final_score = soft_score[0][1]
+        if np.all(result['score_matrix'] == 1):
+            final_score = 1
+        elif np.all(result['score_matrix'] == 0):
+            final_score = 0
+        else:
+            final_score = soft_score[0][1]
         
         # If a logger is provided, log the results
         if self.logger:

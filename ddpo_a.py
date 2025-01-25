@@ -130,7 +130,7 @@ def prompt_fn():
     return np.random.choice(animals), {}
 
 
-def save_images_and_rewards(images, aesthetic_scores, prompts, local_file_path="rewards_base.json"):
+def save_images_and_rewards(images, aesthetic_scores, prompts, local_file_path="rewards_sd1.5.json"):
     """
     保存生成的图像和对应的美学评分
     """
@@ -139,18 +139,18 @@ def save_images_and_rewards(images, aesthetic_scores, prompts, local_file_path="
     all_rewards = []
     
     # 创建保存图像的文件夹
-    if not os.path.exists('generated_images_base'):
-        os.makedirs('generated_images_base')
+    if not os.path.exists('train_generated_images/sd1.5_a'):
+        os.makedirs('train_generated_images/sd1.5_a')
 
     # 计算当前文件夹已有的图像数量，防止文件重名
-    existing_images = len([f for f in os.listdir('generated_images_base') if f.endswith('.png')])
+    existing_images = len([f for f in os.listdir('train_generated_images/sd1.5_a') if f.endswith('.png')])
     
     for i, image in enumerate(images):
         if isinstance(image, torch.Tensor):
             image = to_pil(image)
         
         # 确保图像命名唯一，避免覆盖现有图像
-        save_image_path = f"generated_images_base/image_{existing_images + i + 1}.png"
+        save_image_path = f"train_generated_images/sd1.5_a/image_{existing_images + i + 1}.png"
         image.save(save_image_path)
         
         aesthetic_score = aesthetic_scores[i].item()
@@ -197,7 +197,7 @@ def image_outputs_logger(image_data, global_step, accelerate_logger):
     images, prompts, _, rewards, _ = image_data[-1]
 
     # 调用保存图片和美学评分的函数
-    save_images_and_rewards(images, rewards, prompts, local_file_path="rewards_base.json")
+    save_images_and_rewards(images, rewards, prompts, local_file_path="rewards_sd1.5.json")
 
     for i, image in enumerate(images):
         prompt = prompts[i]
@@ -217,14 +217,14 @@ if __name__ == "__main__":
         "logging_dir": "./logs",
         "automatic_checkpoint_naming": True,
         "total_limit": 5,
-        "project_dir": "./save_ddpo_3",
+        "project_dir": "./save_sd1.5_a",
     }
 
     training_args.log_with = "wandb"
-    wandb.init(project="sd1.5_aesthetic_training", config=script_args)
+    wandb.init(project="sd1.5_a", config=script_args)
 
     # 删除现有的检查点目录并重新创建
-    checkpoint_dir = './save_ddpo_3/checkpoints/'
+    checkpoint_dir = './save_sd1.5_a/checkpoints/'
     if os.path.exists(checkpoint_dir):
         shutil.rmtree(checkpoint_dir)  # 删除现有检查点目录
     os.makedirs(checkpoint_dir, exist_ok=True)  # 创建新的检查点目录
