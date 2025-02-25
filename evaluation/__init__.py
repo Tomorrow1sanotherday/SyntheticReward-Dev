@@ -1,0 +1,1 @@
+from .models.gen_model.text2image_metric import *
