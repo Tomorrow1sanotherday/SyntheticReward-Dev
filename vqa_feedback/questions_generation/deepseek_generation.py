@@ -28,11 +28,22 @@ def save_qid_data_to_json(qid_data, filename='qid_data.json'):
 
 def load_qid_data_from_json(prompt, filename='qid_data.json'):
     """
-    从 JSON 文件加载 qid_data。
+    从 JSON 文件加载 qid_data。如果文件为空，返回 None。
     """
     if os.path.exists(filename):
+        # 检查文件是否为空
+        if os.path.getsize(filename) == 0:
+            return None
+        
+        # 文件不为空，加载 JSON 数据
         with open(filename, 'r', encoding='utf-8') as f:
-            existing_data = json.load(f)
+            try:
+                existing_data = json.load(f)
+            except json.decoder.JSONDecodeError:
+                # 如果 JSON 格式无效，返回 None
+                return None
+
+        # 查找匹配的 prompt
         for item in existing_data:
             if item['prompt'] == prompt:
                 return item
