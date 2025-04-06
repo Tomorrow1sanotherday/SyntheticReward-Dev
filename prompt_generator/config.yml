@@ -1,0 +1,23 @@
+# DeepSeek API Configuration
+base_url: "https://api.nuwaapi.com/v1"
+api_key: "sk-sU43L44pB8apOmLrS8tYie3VPKbGFPNOhgKKS9wPvyfVXiQG"
+model: "deepseek-v3"
+
+# Default Execution Steps (1=Generate Objects Library, 2=Generate Attributes Library, 3=Generate Prompts)
+# Note: This value can be overridden by command line parameters
+# step: 1
+
+# Step 1: Configuration for Generating Objects Library
+objects: 2                  # Number of objects to generate per category
+objects_file: "objects.jsonl"  # Output filename for objects library
+
+# Step 2: Configuration for Generating Attributes Library
+attributes: 5               # Number of values to generate per attribute
+objects_input: "objects.jsonl"  # Input file for Step 2 (objects library)
+attributes_file: "attributes_library.jsonl"  # Output filename for attributes library
+
+# Step 3: Configuration for Generating Prompts
+prompts: 3                  # Number of prompts to generate per object
+complexity: "0-5"           # Prompt complexity range
+attributes_input: "attributes_library.jsonl"  # Input file for Step 3 (attributes library)
+prompts_file: "prompts.jsonl"  # Output filename for prompts

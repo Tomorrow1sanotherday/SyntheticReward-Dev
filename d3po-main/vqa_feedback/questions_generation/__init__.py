@@ -1,0 +1,1 @@
+from .generation_xiaoai import generate_qid_data_from_prompt
