@@ -49,7 +49,7 @@ def load_qid_data_from_json(prompt, filename='qid_data.json'):
                 return item
     return None
 
-def generate_qid_data_from_prompt(input_text_prompt):
+def generate_qid_data_from_prompt(input_text_prompt, output_file):
     """
     从提示生成问题数据。
     """
@@ -67,7 +67,7 @@ def generate_qid_data_from_prompt(input_text_prompt):
 
     id2tuple_outputs, id2question_outputs, id2dependency_outputs = generate_dsg(
         id2prompts,
-        generate_fn=lambda prompt: deepseek_completion(prompt, model="deepseek-chat", temperature=0, max_tokens=500)
+        generate_fn=lambda prompt: deepseek_completion(prompt, model="deepseek-v3", temperature=0, max_tokens=500)
     )
 
     qid2tuple = parse_tuple_output(id2tuple_outputs['custom_0']['output'])
@@ -81,6 +81,6 @@ def generate_qid_data_from_prompt(input_text_prompt):
         'qid2question': qid2question
     }
 
-    save_qid_data_to_json(qid_data)
+    save_qid_data_to_json(qid_data, output_file)
 
     return qid_data

@@ -14,13 +14,13 @@ def load_api_key(key_path='./deepseek_api_key.txt'):
 def deepseek_setup(key_path='./deepseek_api_key.txt'):
     api_key = load_api_key(key_path)
     openai.api_key = api_key
-    openai.base_url = 'http://redservingapi.devops.xiaohongshu.com/v1'  # 设置 DeepSeek 的 API 基础 URL
+    openai.base_url = 'https://api.nuwaapi.com/v1'  # 设置 DeepSeek 的 API 基础 URL
     print("API key has been set.")
 
 # 使用 DeepSeek API 生成模型响应
 def deepseek_completion(
     prompt,
-    model='deepseek-v3-0324',  # 使用 DeepSeek 的模型名称
+    model='deepseek-v3',  # 使用 DeepSeek 的模型名称
     temperature=0,
     return_response=False,
     max_tokens=500,
@@ -30,7 +30,7 @@ def deepseek_completion(
     # 创建 OpenAI 客户端实例
     key_path='./deepseek_api_key.txt'
     api_key = load_api_key(key_path)
-    client = openai.OpenAI(api_key=api_key, base_url='http://redservingapi.devops.xiaohongshu.com/v1')
+    client = openai.OpenAI(api_key=api_key, base_url='https://api.nuwaapi.com/v1')
 
     for attempt in range(retries):
         try:

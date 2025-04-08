@@ -1,29 +1,28 @@
-import wandb
-import random
+import json
 
-# start a new wandb run to track this script
-wandb.init(
-    # set the wandb project where this run will be logged
-    project="my-awesome-project",
+with open('qid_data_simple.json') as f:
+    data = json.load(f)
+print(len(data))
+# import json
+# from collections import Counter
 
-    # track hyperparameters and run metadata
-    config={
-    "learning_rate": 0.02,
-    "architecture": "CNN",
-    "dataset": "CIFAR-100",
-    "epochs": 10,
-    }
-)
+# # 假设文件名是 'data.jsonl'
+# file_path = '/home/ubuntu/dcai/SyntheticReward-Dev/asset/simple_prompts.jsonl'
 
-# simulate training
-epochs = 10
-offset = random.random() / 5
-for epoch in range(2, epochs):
-    acc = 1 - 2 ** -epoch - random.random() / epoch - offset
-    loss = 2 ** -epoch + random.random() / epoch + offset
+# # 用于存储所有 prompt 的列表
+# prompts = []
 
-    # log metrics to wandb
-    wandb.log({"acc": acc, "loss": loss})
+# # 逐行读取文件并提取 prompt
+# with open(file_path, 'r', encoding='utf-8') as file:
+#     for line in file:
+#         # 解析每一行的 JSON 数据
+#         data = json.loads(line.strip())  # .strip() 用于去除行尾换行符
+#         prompts.append(data['prompt'])  # 提取 prompt 字段并添加到列表
 
-# [optional] finish the wandb run, necessary in notebooks
-wandb.finish()
+# # 统计每个 prompt 出现的次数
+# prompt_counts = Counter(prompts)
+
+# # 输出所有重复的 prompt 以及它们的出现次数
+# for prompt, count in prompt_counts.items():
+#     if count > 1:
+#         print(f"Prompt: '{prompt}', Count: {count}")
