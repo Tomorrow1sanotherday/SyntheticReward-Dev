@@ -34,10 +34,14 @@
 
 # 生成 `qid_data.json` 文件
 
-1. 进入 `SyntheticReward-Dev` 目录并创建 `qid_data.json` 文件：
-    ```bash
-    cd SyntheticReward-Dev
-    ```
+1. 修改：`SyntheticReward-Dev/vqa_feedback/questions_generation/deepseek_generation.py` 文件
+```
+model = 'deepseek-v3'
+base_url = 'https://api.nuwaapi.com/v1'
+key_path='./deepseek_api_key.txt'
+```
+为自己的设置。
+
 
 2. 修改 `deepseek_api_key.txt` 文件，替换为自己的 API 密钥。
 

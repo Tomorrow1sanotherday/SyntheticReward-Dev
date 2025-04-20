@@ -9,6 +9,10 @@ import os
 import threading
 import time
 
+model = 'deepseek-v3'
+base_url = 'https://api.nuwaapi.com/v1'
+key_path='./deepseek_api_key.txt'
+
 # 创建一个文件锁，用于安全地写入共享文件
 file_lock = threading.Lock()
 
@@ -50,7 +54,7 @@ def generate_qid_data_from_prompt(input_text_prompt, output_file):
 
     id2tuple_outputs, id2question_outputs, id2dependency_outputs = generate_dsg(
         id2prompts,
-        generate_fn=lambda prompt: deepseek_completion(prompt, model="deepseek-v3", temperature=0, max_tokens=500)
+        generate_fn=lambda prompt: deepseek_completion(prompt, model=model, temperature=0, max_tokens=500, base_url=base_url, key_path=key_path)
     )
 
     qid2tuple = parse_tuple_output(id2tuple_outputs['custom_0']['output'])
@@ -182,7 +186,7 @@ def process_prompt_api_only(input_text_prompt, max_retries=100):
 
             id2tuple_outputs, id2question_outputs, id2dependency_outputs = generate_dsg(
                 id2prompts,
-                generate_fn=lambda prompt: deepseek_completion(prompt, model="deepseek-v3", temperature=0, max_tokens=500),
+                generate_fn=lambda prompt: deepseek_completion(prompt, model=model, temperature=0, max_tokens=500, base_url=base_url, key_path=key_path),
                 verbose=False  # 减少输出
             )
 

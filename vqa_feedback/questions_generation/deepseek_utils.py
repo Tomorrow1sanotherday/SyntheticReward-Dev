@@ -60,7 +60,8 @@ def deepseek_completion(
     retries=3,
     delay=2,
     # 可以在这里可选地传入 key_path，或者继续硬编码
-    key_path='./deepseek_api_key.txt' 
+    key_path='./deepseek_api_key.txt',
+    base_url = 'https://api.nuwaapi.com/v1'
 ):
     # 在每次调用时加载 API 密钥并创建客户端实例，这是线程安全的
     try:
@@ -73,7 +74,7 @@ def deepseek_completion(
 
     # 使用显式 api_key 和 base_url 创建客户端
     # 注意：这里的 base_url 是硬编码的，覆盖了 deepseek_setup 中可能设置的全局 base_url
-    client = openai.OpenAI(api_key=api_key, base_url='https://api.nuwaapi.com/v1') 
+    client = openai.OpenAI(api_key=api_key, base_url=base_url) 
 
     for attempt in range(retries):
         try:
