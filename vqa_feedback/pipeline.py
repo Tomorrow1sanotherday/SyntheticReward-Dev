@@ -9,8 +9,8 @@ from .questions_generation import generate_qid_data_from_prompt
 label_models = {
     "MajorityWeightedVoting": MajorityWeightedVoting(),
     "MajorityVoting": MajorityVoting(),
-    "DawidSknene": DawidSkene(),
-    "MeTaL": MeTaL(),
+    # "DawidSknene": DawidSkene(),
+    # "MeTaL": MeTaL(),
     "EBCC": EBCC(), # need Weaklabel
     "FlyingSquid": FlyingSquid(),
     "GenerativeModel": GenerativeModel(),
@@ -29,7 +29,7 @@ class BinaryQuesitonGenerator:
 
     def generate_binary_question(self):
         prompt = self.prompt
-        self.questions = generate_qid_data_from_prompt(prompt)
+        self.questions = generate_qid_data_from_prompt(prompt, 'qid_data_simple.json')
         return self.questions
 
 class PromptQaGenerator:

@@ -1,8 +1,8 @@
 import json
 
-with open('qid_data_simple.json') as f:
-    data = json.load(f)
-print(len(data))
+# with open('qid_data_simple.json') as f:
+#     data = json.load(f)
+# print(len(data))
 # import json
 # from collections import Counter
 
@@ -26,3 +26,30 @@ print(len(data))
 # for prompt, count in prompt_counts.items():
 #     if count > 1:
 #         print(f"Prompt: '{prompt}', Count: {count}")
+
+
+# import json
+
+# # 读取 JSON 数据
+# with open('qid_data_simple.json', "r", encoding='utf-8') as f:
+#     data = json.load(f)
+
+
+# # 用于统计不一致的条目
+# mismatch_count = 0
+
+# # 遍历每个对象，检查字段内容数量是否一致
+# for item in data:
+#     prompt = item['prompt']
+#     qid2tuple_len = len(item['qid2tuple'])
+#     qid2dependency_len = len(item['qid2dependency'])
+#     qid2question_len = len(item['qid2question'])
+    
+#     if qid2tuple_len != qid2dependency_len or qid2tuple_len != qid2question_len:
+#         print(f"Mismatch found in prompt: {prompt}")
+#         mismatch_count += 1
+
+# print(f"\nTotal mismatches found: {mismatch_count}")
+
+import os
+print(os.isdir)

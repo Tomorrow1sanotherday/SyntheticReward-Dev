@@ -2,7 +2,7 @@ import http.client
 import json
 import time
 
-def openai_setup(key_path='./_OAI_KEY.txt'):
+def openai_setup(key_path='./deepseek_api_key.txt'):
     with open(key_path) as f:
         key = f.read().strip()
     print("Read key from", key_path)

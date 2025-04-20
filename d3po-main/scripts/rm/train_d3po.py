@@ -36,12 +36,12 @@ from vqa_feedback import Logger as Local_logger
 tqdm = partial(tqdm.tqdm, dynamic_ncols=True)
 print("*" *100)
 # Initialize models
-vqa_model_1 = ImageQAModel(
-    model_name="llavav1.6-7b", 
-    torch_device='auto',
-    enable_choice_search=True, 
-    precision=torch.float16,
-)
+# vqa_model_1 = ImageQAModel(
+#     model_name="llavav1.6-7b", 
+#     torch_device='auto',
+#     enable_choice_search=True, 
+#     precision=torch.float16,
+# )
 
 vqa_model_2 = ImageQAModel(
     model_name="llavav1.5-7b",
@@ -49,9 +49,9 @@ vqa_model_2 = ImageQAModel(
     enable_choice_search=True, 
     precision=torch.float16,
 )
-
+print("*" *100)
 # Initialize VQA ensembler and weak supervisor
-vqa_ensembler = VQAEnsembler([vqa_model_1, vqa_model_2])
+vqa_ensembler = VQAEnsembler([vqa_model_2])
 weak_supervisor = WeakSupervisor(strategy_name="MajorityVoting")
 # Initialize Logger
 local_logger = Local_logger(log_file="training_log_vqa_d3po.json", image_dir="train_generated_images/sd1.5_vqa_d3po")

@@ -19,7 +19,7 @@
 
 5. 运行训练代码：
     ```bash
-    HF_ENDPOINT=https://hf-mirror.com python ddpo_vqa_simple.py \
+    HF_ENDPOINT=https://hf-mirror.com python ddpo_vqa.py \
       --num_epochs=210 \
       --train_gradient_accumulation_steps=1 \
       --sample_num_steps=50 \
@@ -43,5 +43,5 @@
 
 3. 运行生成 `qid_data.json` 文件的代码：
     ```bash
-    python get_qid_data.py
+    python get_qid_data.py --input_file asset/aaa.jsonl --output_file qid_data.json --max_workers 10
     ```

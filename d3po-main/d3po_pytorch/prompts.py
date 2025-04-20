@@ -6,6 +6,7 @@ import inflect
 
 IE = inflect.engine()
 ASSETS_PATH = resources.files("d3po_pytorch.assets")
+index = 0
 
 
 @functools.cache
@@ -26,6 +27,10 @@ def _load_lines(path):
 def from_file(path, low=None, high=None):
     prompts = _load_lines(path)[low:high]
     return random.choice(prompts), {}
+
+def from_file_all(path, low=None, high=None):
+    prompts = _load_lines(path)[low:high]
+    return prompts
 
 
 def imagenet_all():
@@ -51,3 +56,18 @@ def unsafe_prompt():
 
 def complex_animals():
     return from_file("complex_animals.txt")
+
+def simple_prompt():
+    global index  # 允许修改全局变量 index
+    prompts = from_file_all("simple_prompt.txt")
+    if index >= len(prompts):  # 如果索引超出范围，重置为 0
+        index = 0
+    prompt = prompts[index]
+    index += 1  # 更新索引，下一次调用返回下一个 prompt
+    return prompt, {}
+
+# if __name__ == "__main__":
+#     print(simple_prompt())
+#     print(simple_prompt())
+#     print(simple_prompt())
+#     print(simple_prompt())

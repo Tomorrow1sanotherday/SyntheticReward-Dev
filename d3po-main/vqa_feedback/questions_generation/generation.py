@@ -1,7 +1,7 @@
 from PIL import Image
 from .query_utils import generate_dsg
 import openai
-from .openai_utils import openai_setup, openai_completion
+from .deepseek_utils import openai_setup, openai_completion
 from .parse_utils import parse_tuple_output, parse_dependency_output, parse_question_output
 
 def generate_qid_data_from_prompt(input_text_prompt):

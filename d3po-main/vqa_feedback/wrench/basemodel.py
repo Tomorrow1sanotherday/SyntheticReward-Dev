@@ -18,7 +18,8 @@ from torch.cuda.amp import autocast
 from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.optim import Optimizer
 from torch.utils.data import DataLoader
-from transformers import AdamW, get_linear_schedule_with_warmup
+from transformers import get_linear_schedule_with_warmup
+from torch.optim import AdamW
 
 from . import get_amp_flag, get_num_workers, get_pin_memory, backbone
 from .backbone import BackBone, BERTBackBone, ImageClassifier

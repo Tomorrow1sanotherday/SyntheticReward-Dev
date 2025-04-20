@@ -1,4 +1,4 @@
-import os
+import os 
 import json
 from dataclasses import dataclass, field
 import wandb
@@ -10,6 +10,7 @@ from vqa_feedback import VQAEnsembler, WeakSupervisor, ImageQAModel, Pipeline
 from torchvision.transforms import ToPILImage
 from vqa_feedback import Logger
 from util.data_process import read_only_prompts_from_jsonl
+import shutil
 
 
 @dataclass
@@ -38,36 +39,22 @@ prompts = read_only_prompts_from_jsonl(prompts_file)
 
 # 全局变量跟踪当前位置
 current_prompt_index = 0
+global_epoch = -2
+
+# 获取当前脚本文件的绝对路径
+script_path = os.path.abspath(__file__)
+
+# 获取当前脚本文件所在的目录
+script_dir = os.path.dirname(script_path)
 
 def prompt_fn():
-    """
-    按顺序从提示列表中获取下一个prompt
-    
-    Returns:
-        prompt: 列表中的下一个提示
-        metadata: 空字典（保持与原函数兼容）
-    """
     global current_prompt_index
-    
-    # 获取当前索引的prompt
     prompt = prompts[current_prompt_index]
-    
-    # 移动到下一个索引
-    current_prompt_index += 1
-    
-    # 如果到达列表末尾，重置索引回到开始位置
-    if current_prompt_index >= len(prompts):
-        current_prompt_index = 0
-    
+    current_prompt_index = (current_prompt_index + 1) % len(prompts)
     return prompt, {}
 
 
 def vqa_scorer(vqa_pipeline, local_file_path="ddpo_sd1.5_vqa_simple_rewards.json"):
-    """
-    Use vqa_pipeline to score images based on prompts and log rewards.
-    Rewards are saved both to WandB and a local JSON file.
-    """
-    # Ensure the local JSON file exists
     if not os.path.exists(local_file_path):
         with open(local_file_path, "w") as f:
             json.dump([], f)
@@ -75,42 +62,22 @@ def vqa_scorer(vqa_pipeline, local_file_path="ddpo_sd1.5_vqa_simple_rewards.json
     def _fn(images, prompts, metadata):
         scores = []
         all_rewards = []
-
-         # Create a tensor-to-PIL converter
         to_pil = ToPILImage()
 
         for i, image in enumerate(images):
-            # Check the image type
             if isinstance(image, torch.Tensor):
-                # Convert tensor to PIL Image
                 image = to_pil(image)
-          
-            # Use vqa_pipeline to calculate the score
-            score = vqa_pipeline(image, prompts[i]) * 10  # Use the single prompt for scoring
+            score = vqa_pipeline(image, prompts[i]) * 10
             scores.append(score)
-
-            # Reward data for the current prompt and score
-            reward_data = {
-                "prompt": prompts[i],
-                "score": score
-            }
-
-            # Save to local JSON file
+            reward_data = {"prompt": prompts[i], "score": score}
             with open(local_file_path, "r+") as f:
                 try:
-                    # Try to load existing data
                     data = json.load(f)
                 except json.JSONDecodeError:
-                    # If the file is empty or invalid, initialize it
                     data = []
-
-                # Append new reward data
                 data.append(reward_data)
-
-                # Write updated data back to the file
                 f.seek(0)
                 json.dump(data, f, indent=4)
-
             all_rewards.append(reward_data)
 
         return np.array(scores), {}
@@ -118,12 +85,63 @@ def vqa_scorer(vqa_pipeline, local_file_path="ddpo_sd1.5_vqa_simple_rewards.json
     return _fn
 
 
-def image_outputs_logger(image_data, global_step, accelerate_logger):
-    # For the sake of this example, we will only log the last batch of images
-    # and associated data
-    result = {}
-    images, prompts, _, rewards, _ = image_data[-1]
+# 全局维护 top5 reward mean 列表及对应 checkpoint 名称
+best_means = []  # 存 float
+best_ckpts = []  # 存 checkpoint 子目录名，比如 'checkpoint-1000'
 
+
+
+def image_outputs_logger(image_data, global_step, accelerate_logger):
+    """
+    在原有日志图片的基础上，新增 top5 reward_mean checkpoint 复制逻辑。
+    """
+    global best_means, best_ckpts, global_epoch
+
+    # 取最后一批
+    images, prompts, _, rewards, _ = image_data[-1]
+    # 计算本批次 mean reward
+    mean_reward = rewards.float().mean().item()
+    print(rewards)
+    print(mean_reward)
+
+    # 如果还没满5个，或者 mean_reward 大于当前最小的 top5
+    if len(best_means) < 5 or mean_reward > min(best_means):
+        # 确定要插入的位置
+        if mean_reward in best_means:
+            # 如果正好重复均值，则跳过复制
+            pass
+        else:
+            # 如果已满5个，先移除最小的
+            if len(best_means) >= 5:
+                idx_min = best_means.index(min(best_means))
+                best_means.pop(idx_min)
+                old_ckpt = best_ckpts.pop(idx_min)
+                # 可选：删除对应旧文件夹
+                old_path = os.path.join(best_ckpt_target_dir, old_ckpt)
+                if os.path.exists(old_path):
+                    shutil.rmtree(old_path)
+            # 插入新的
+            best_means.append(mean_reward)
+            # 假设当前最新 checkpoint 子目录是 'checkpoint-{global_step}'
+            ckpt_name = f'checkpoint_{global_epoch}'
+            best_ckpts.append(ckpt_name)
+
+            # 复制 checkpoint
+            src_dir = os.path.join(checkpoint_dir, ckpt_name)
+            dst_dir = os.path.join(best_ckpt_target_dir, ckpt_name)
+            if os.path.isdir(src_dir) and not os.path.isdir(dst_dir):
+                os.makedirs(dst_dir, exist_ok=True)
+                # 复制整个目录
+                shutil.copytree(src_dir, dst_dir, dirs_exist_ok=True)
+                print(f"已保存新的 top5 checkpoint: {ckpt_name}, mean_reward={mean_reward:.4f}")
+            else:
+                print(src_dir)
+                print(dst_dir)
+
+    # 否则不做任何操作
+
+    # 原有的图片日志逻辑
+    result = {}
     for i, image in enumerate(images):
         prompt = prompts[i]
         reward = rewards[i].item()
@@ -133,13 +151,10 @@ def image_outputs_logger(image_data, global_step, accelerate_logger):
         result,
         step=global_step,
     )
+    global_epoch += 1
 
 
-def get_checkpoint_file_name(checkpoint_dir):
-    """
-    Use a fixed checkpoint directory and file name, so it will overwrite previous checkpoint.
-    """
-    return os.path.join(checkpoint_dir, 'checkpoint_latest.pth')
+
 
 
 if __name__ == "__main__":
@@ -171,7 +186,7 @@ if __name__ == "__main__":
     training_args.project_kwargs = {
         "logging_dir": "./logs",
         "automatic_checkpoint_naming": True,
-        "total_limit": 5,
+        "total_limit": None,
         "project_dir": "./ddpo_sd1.5_vqa_simple_save",
     }
 
@@ -187,26 +202,19 @@ if __name__ == "__main__":
         use_lora=script_args.use_lora,
     )
 
+    # checkpoint 目录，用于复制
+    checkpoint_dir = 'ddpo_sd1.5_vqa_simple_save/checkpoints'
+    # 你要复制到的目标文件夹
+    best_ckpt_target_dir = 'ddpo_sd1.5_vqa_simple_save/best_checkpoints'
+
     trainer = DDPOTrainer(
         training_args,
-        vqa_scorer(vqa_pipeline, local_file_path="ddpo_sd1.5_vqa_simple_rewards.json"),  # Pass local JSON file path
+        vqa_scorer(vqa_pipeline, local_file_path="ddpo_sd1.5_vqa_simple_rewards.json"),
         prompt_fn,
         pipeline,
         image_samples_hook=image_outputs_logger,
     )
 
-    # Use fixed checkpoint directory and file name, so it will overwrite the latest checkpoint
-    checkpoint_dir = './ddpo_sd1.5_vqa_simple_save/checkpoints/'
-    checkpoint_file_name = get_checkpoint_file_name(checkpoint_dir)
-
-    # Train the model
     trainer.train()
+    print("训练结束")
 
- # Save the model locally using the defined checkpoint path
-    trainer.save_model(checkpoint_file_name) 
-    
-    # Remove or comment out the code block responsible for pushing to the Hub
-    # if training_args.push_to_hub:
-    #     trainer.push_to_hub(dataset_name=script_args.dataset_name) # <- This line pushes to the Hub
-
-    print(f"Model saved locally to {checkpoint_file_name}") # Optional: Add a confirmation message
